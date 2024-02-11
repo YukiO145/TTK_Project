@@ -1,0 +1,56 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">      
+    {% if submitted %}
+    <div class="alert alert-dismissible alert-success text-center mt-3">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Сообщение отправлено.</strong>           
+    </div>    
+    {% endif %}  
+<h3 class="text-center mt-5 mb-3">Контакты</h3>
+    <div class="map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7a6f829e2a3c61ed25ccf6a2e538facf799725bfcec7ab02e6193e862dc2b5ed&amp;width=100%25&amp;height=368&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+    <!-- /.map -->
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover mt-3">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Название</th>
+                        <th>Адрес</th>
+                        <th>Почта</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>АО "Компания ТрансТелеКом"</td>
+                        <td>Москва, Верейская улица, 29, строение 33</td>
+                        <td>welctt@biz.tt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.offset-md-3 col-md-6 offset-md-3 col-12 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row mb-5">
+      <div class="offset-md-3 col-md-6 offset-md-3 col-12">
+       <h3 class="text-center mt-5 mb-3">Написать сообщение</h3>
+          <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}                
+                <div class="form-group mt-3">
+                  <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+                <!-- /.form-group -->
+          </form>
+      </div>
+      <!-- /.offset-md-2 col-md-8 offset-md-2 col-12 -->
+  </div>
+  <!-- /.row -->   
+</div>
+<!-- /.container -->
+{% endblock %}
