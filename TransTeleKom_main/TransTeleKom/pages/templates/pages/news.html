@@ -1,0 +1,47 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">    
+    <h2 class="text-center mt-5 mb-3">Новости</h2><!-- /.text-center -->
+    <div class="row">        
+        <div class="offset-md-2 col-md-8 offset-md-2 col-12">            
+            <div class="d-flex flex-column justify-content-center align-items-center">    
+                {% for new in news %} 
+                <div class="card mb-3" style="width: 30rem;">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ new.title }}</h4> 
+                    </div>
+                    <div class="card-body">
+                        <img class="w-100" src="{{ new.photo.url }}" alt="">
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Дата публикации: {{ new.pdate|date:"d.m.Y" }}</li>                            
+                          </ul>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-body">
+                        <p>{{ new.text }}</p>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  {% endfor %}  
+                </div>
+                <!-- /.d-flex --> 
+        </div>
+        <!-- /.col-md-8 col-12 -->
+    </div>
+    <!-- /.row -->  
+    <div class="row mt-5 mb-3">
+        <div class="offset-md-3 col-md-6 offset-md-3 col-12 text-center">
+            <a href="{% url 'news' 'all' %}">Архив новостей</a>
+        </div>
+        <!-- /.offset-md-3 col-md-6 offset-md-3 col-12 -->
+    </div>
+    <!-- /.row --> 
+</div>
+<!-- /.container -->
+{% endblock %}

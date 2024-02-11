@@ -1,0 +1,33 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">ТрансТелеКом</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'about' %}">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'news' 'all' %}">Новости</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'house' %}">Для дома</a>
+          </li>         
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'business' %}">Для бизнеса</a>
+          </li>            
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'contacts' %}">Контакты</a>
+          </li>         
+        </ul> 
+        <ul class="navbar-nav ml-auto">
+          <li><a href="https://vk.com/ttk"><img style="width: 30px;" src="{% static 'images/vk.png' %}" alt=""></a></li>
+          <li style="margin-left: 15px;margin-right: 15px;"><a href="https://t.me/ttkrus"><img style="width: 30px;" src="{% static 'images/telegram.png' %}" alt=""></a></li>
+          <li><a href="https://ok.ru/ttk"><img style="width: 30px;" src="{% static 'images/odnoklassniki.png' %}" alt=""></a></li>
+        </ul>       
+      </div>
+    </div>
+  </nav>
